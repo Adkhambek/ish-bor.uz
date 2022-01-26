@@ -232,6 +232,25 @@ router.patch("/:id", async (req: Request, res: Response) => {
     }
 });
 
+router.get("/status/:id", async (req: Request, res: Response) => {
+    try {
+        const id: number = (req.params.id as any) * 1;
+        await getConnection()
+            .createQueryBuilder()
+            .update(Employer)
+            .set({ status: 1 })
+            .where("id = :id", { id })
+            .execute();
+        res.status(200).json({
+            code: 200,
+            status: "success",
+            message: "Ma'lumot tasdiqlandi",
+        });
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 router.delete("/:id", async (req: Request, res: Response) => {
     try {
         const id: number = (req.params.id as any) * 1;
