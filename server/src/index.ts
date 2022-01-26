@@ -11,7 +11,6 @@ import routes from "./routes";
         await createConnection();
         const app = express();
         app.use(express.json());
-        app.use();
         app.use(helmet());
         app.use(cors());
         app.use(routes);
