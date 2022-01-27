@@ -5,10 +5,15 @@ import key from "./config/keys";
 import helmet from "helmet";
 import cors from "cors";
 import routes from "./routes";
+import { Login } from "./entity/Login";
 
 (async () => {
     try {
-        await createConnection();
+        const connection = await createConnection();
+        const login = new Login();
+        login.username = key.username as string;
+        login.password = key.password as string;
+        await connection.manager.save(login);
         const app = express();
         app.use(express.json());
         app.use(helmet());

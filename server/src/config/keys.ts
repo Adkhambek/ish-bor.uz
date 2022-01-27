@@ -8,4 +8,8 @@ export default {
     baseUrl: process.env.BASE_URL,
     telegramChannel: process.env.TELEGRAM_CHANNEL,
     chatId: process.env.CHAT_ID,
+    username: process.env.LOGIN_USERNAME,
+    password: process.env.LOGIN_PASSWORD,
+    secretKey: process.env.SECRET_KEY,
+    expiresIn: process.env.JWT_EXPIRE,
 };
