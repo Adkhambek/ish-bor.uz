@@ -3,6 +3,7 @@ import { Router, Request, Response } from "express";
 const router = Router();
 import { Employer } from "../../entity/Employer";
 import key from "../../config/keys";
+import axios from "axios";
 
 router.get("/page/:num", async (req: Request, res: Response) => {
     const employerRepository = getRepository(Employer);
@@ -217,6 +218,47 @@ router.post("/", async (req: Request, res: Response) => {
     }
 });
 
+router.get("/send/to/telegram/:id", async (req: Request, res: Response) => {
+    try {
+        const id: number = (req.params.id as any) * 1;
+        const employerRepository = getRepository(Employer);
+        const data = await employerRepository.findOne(id, {
+            where: {
+                status: 1,
+            },
+        });
+        if (!data) {
+            return res.status(400).json({
+                code: 400,
+                status: "Empty",
+                error: "Hech qanday ma'lumot yo'q",
+            });
+        }
+        console.log(data);
+        const message = `<b>Ish bor:</b> ${data.profession}\n📍  ${data.region}\n💵 ${data.salary}\n📞  ${key.baseUrl}/id/${id}`;
+        const request = await axios.get(
+            `https://api.telegram.org/bot${key.botToken}/sendMessage?chat_id=${
+                key.telegramChannel
+            }&text=${encodeURI(message)}&parse_mode=HTML`
+        );
+        if (request.status === 200) {
+            return res.status(200).json({
+                code: 200,
+                status: "Success",
+                error: "E'lon telegram kanalga yuborildi",
+            });
+        } else {
+            return res.status(400).json({
+                code: 400,
+                status: "Fail",
+                error: "Qandaydir xatolik bor xabarni telegram kanalga yuborishda",
+            });
+        }
+    } catch (error) {
+        console.log(error);
+    }
+});
+
 router.patch("/:id", async (req: Request, res: Response) => {
     try {
         const id: number = (req.params.id as any) * 1;
@@ -240,13 +282,13 @@ router.patch("/:id", async (req: Request, res: Response) => {
     }
 });
 
-router.get("/status/:id", async (req: Request, res: Response) => {
+router.patch("/status/:id", async (req: Request, res: Response) => {
     try {
         const id: number = (req.params.id as any) * 1;
         await getConnection()
             .createQueryBuilder()
             .update(Employer)
-            .set({ status: 1 })
+            .set({ status: req.body.status })
             .where("id = :id", { id })
             .execute();
         res.status(200).json({
