@@ -209,7 +209,11 @@ router.post("/", async (req: Request, res: Response) => {
             message: "Sizning so'rovingiz qabul qilindi.",
         });
     } catch (error) {
-        console.log(error);
+        res.status(400).json({
+            code: 400,
+            status: "fail",
+            message: "Something wrong.",
+        });
     }
 });
 
@@ -228,7 +232,11 @@ router.patch("/:id", async (req: Request, res: Response) => {
             message: "Ma'lumotlar to'gri holatga keltirildi",
         });
     } catch (error) {
-        console.log(error);
+        res.status(400).json({
+            code: 400,
+            status: "fail",
+            message: "Something wrong.",
+        });
     }
 });
 
@@ -247,7 +255,11 @@ router.get("/status/:id", async (req: Request, res: Response) => {
             message: "Ma'lumot tasdiqlandi",
         });
     } catch (error) {
-        console.log(error);
+        res.status(400).json({
+            code: 400,
+            status: "fail",
+            message: "Something wrong.",
+        });
     }
 });
 
@@ -266,7 +278,11 @@ router.delete("/:id", async (req: Request, res: Response) => {
             message: "Ma'lumot o'chirildi",
         });
     } catch (error) {
-        console.log(error);
+        res.status(400).json({
+            code: 400,
+            status: "fail",
+            message: "Something wrong.",
+        });
     }
 });
 
