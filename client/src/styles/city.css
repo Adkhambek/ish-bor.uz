@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.city{
+    margin-top: 50px;
+}
+.city .card{
+    background-color: #e9ecef;
+    border-radius: 15px;
+    height: 100%;
+    border: none;
+    /*border: 2px solid #01384D;*/
+}
+.city .card h6{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 23px;
+    color: #01384D;
+    font-weight: 700;
+    border-bottom: 1px solid #01384D;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.city .card ul{
+    margin-top: 20px;
+}
+.city .card ul li a{
+    color: #01384D;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.workers{
+    margin-top: 150px;
+}
+.workers .container-fluid{
+    margin-top: 100px;
+}
+.workers .title-workers{
+    text-align: center;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #01384D;
+}
+.workers .sub-title-workers{
+    text-align: center;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #6c757d
+}
+.workers .row{
+    margin-top: 50px;
+}
+.workers .card{
+    height: 100%;
+    border: 2px solid #01384D;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+.workers .card:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.workers .card .card-header{
+    border-bottom: 2px solid #01384D;
+}
+.workers .card .card-header h6{
+    font-size: 18px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+    color: #01384D;
+    min-height: 45px;
+}
+.workers .card .card-header h6 span{
+    font-weight: 700;
+    color: #6c757d;
+}
+.workers .card .card-body p{
+    font-size: 14px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+    color: #01384D;
+}
+.workers .card .card-body h5{
+    font-size: 16px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+    color: #6c757d
+}
+.workers .card .card-body h5 span{
+    font-weight: 900;
+    color: #01384D;
+}
+.workers .card .card-body .worker-link{
+    background-color: #01384D;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #01384D;
+}
+.workers .card .card-body .worker-link:hover{
+    background-color: #ffffff;
+    color: #01384D;
+    border: 2px solid #01384D;
+}
+.workers .card .card-body .worker-link i{
+    color: #01384D;
+    margin-left: 10px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px!important;
+}
+::-webkit-scrollbar {max-height: 50%; height: 50%;}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #01384D;
+}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.banner{
+    margin-top: 150px;
+}
+.banner .card{
+    background-color: #e9ecef;
+    border-radius: 15px;
+    height: 100%;
+    border: none;
+    /*border: 2px solid #01384D;*/
+}
+.banner .card-body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.banner .card-body img{
+    height: 300px;
+}
+.banner .card-body h3{
+    font-size: 40px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    color: #01384D;
+}
+.banner .card-body h6{
+    font-size: 20px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    color: #6c757d;
+}
+.banner .card-body .links{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+.banner .card-body .links a{
+    display: block;
+    text-decoration: none;
+    color: #01384D;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 20px;
+    border:2px solid #01384D;
+    padding: 10px 15px;
+    border-radius: 13px;
+    transition: all 0.5s ease-in-out;
+}
+.banner .card-body .links a:hover{
+    background-color: #01384D;
+    color: #fff;
+    transform: translateY(-5px);
+}
