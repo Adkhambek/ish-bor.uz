@@ -4,6 +4,7 @@ const router = Router();
 import { Employee } from "../../entity/Employee";
 import key from "../../config/keys";
 import axios from "axios";
+import protect from "../../middleware/auth";
 
 router.get("/page/:num", async (req: Request, res: Response) => {
     const employeeRepository = getRepository(Employee);
@@ -124,7 +125,7 @@ router.get("/region/:name/page/:num", async (req: Request, res: Response) => {
     }
 });
 
-router.get("/new/:id", async (req: Request, res: Response) => {
+router.get("/new/:id", protect, async (req: Request, res: Response) => {
     const employeeRepository = getRepository(Employee);
     const id: number = (req.params.id as any) * 1;
     const data = await employeeRepository.findOne(id, {
@@ -150,7 +151,7 @@ router.get("/new/:id", async (req: Request, res: Response) => {
     });
 });
 
-router.get("/new/page/:num", async (req: Request, res: Response) => {
+router.get("/new/page/:num", protect, async (req: Request, res: Response) => {
     const employeeRepository = getRepository(Employee);
     const page: number = (req.params.num as any) * 1;
     const total: number = await employeeRepository.count();
@@ -218,48 +219,54 @@ router.post("/", async (req: Request, res: Response) => {
     }
 });
 
-router.get("/send/to/telegram/:id", async (req: Request, res: Response) => {
-    try {
-        const id: number = (req.params.id as any) * 1;
-        const employeeRepository = getRepository(Employee);
-        const data = await employeeRepository.findOne(id, {
-            where: {
-                status: 1,
-            },
-        });
-        if (!data) {
-            return res.status(400).json({
-                code: 400,
-                status: "Empty",
-                error: "Hech qanday ma'lumot yo'q",
+router.get(
+    "/send/to/telegram/:id",
+    protect,
+    async (req: Request, res: Response) => {
+        try {
+            const id: number = (req.params.id as any) * 1;
+            const employeeRepository = getRepository(Employee);
+            const data = await employeeRepository.findOne(id, {
+                where: {
+                    status: 1,
+                },
             });
+            if (!data) {
+                return res.status(400).json({
+                    code: 400,
+                    status: "Empty",
+                    error: "Hech qanday ma'lumot yo'q",
+                });
+            }
+            console.log(data);
+            const message = `<b>Ish joy:</b> ${data.profession}\n📍  ${data.region}\n💵 ${data.salary}\n📞  ${key.baseUrl}/id/${id}`;
+            const request = await axios.get(
+                `https://api.telegram.org/bot${
+                    key.botToken
+                }/sendMessage?chat_id=${key.telegramChannel}&text=${encodeURI(
+                    message
+                )}&parse_mode=HTML`
+            );
+            if (request.status === 200) {
+                return res.status(200).json({
+                    code: 200,
+                    status: "Success",
+                    error: "E'lon telegram kanalga yuborildi",
+                });
+            } else {
+                return res.status(400).json({
+                    code: 400,
+                    status: "Fail",
+                    error: "Qandaydir xatolik bor xabarni telegram kanalga yuborishda",
+                });
+            }
+        } catch (error) {
+            console.log(error);
         }
-        console.log(data);
-        const message = `<b>Ish joy:</b> ${data.profession}\n📍  ${data.region}\n💵 ${data.salary}\n📞  ${key.baseUrl}/id/${id}`;
-        const request = await axios.get(
-            `https://api.telegram.org/bot${key.botToken}/sendMessage?chat_id=${
-                key.telegramChannel
-            }&text=${encodeURI(message)}&parse_mode=HTML`
-        );
-        if (request.status === 200) {
-            return res.status(200).json({
-                code: 200,
-                status: "Success",
-                error: "E'lon telegram kanalga yuborildi",
-            });
-        } else {
-            return res.status(400).json({
-                code: 400,
-                status: "Fail",
-                error: "Qandaydir xatolik bor xabarni telegram kanalga yuborishda",
-            });
-        }
-    } catch (error) {
-        console.log(error);
     }
-});
+);
 
-router.patch("/:id", async (req: Request, res: Response) => {
+router.patch("/:id", protect, async (req: Request, res: Response) => {
     try {
         const id: number = (req.params.id as any) * 1;
         await getConnection()
@@ -282,7 +289,7 @@ router.patch("/:id", async (req: Request, res: Response) => {
     }
 });
 
-router.patch("/status/:id", async (req: Request, res: Response) => {
+router.patch("/status/:id", protect, async (req: Request, res: Response) => {
     try {
         const id: number = (req.params.id as any) * 1;
         await getConnection()
@@ -305,7 +312,7 @@ router.patch("/status/:id", async (req: Request, res: Response) => {
     }
 });
 
-router.delete("/:id", async (req: Request, res: Response) => {
+router.delete("/:id", protect, async (req: Request, res: Response) => {
     try {
         const id: number = (req.params.id as any) * 1;
         await getConnection()

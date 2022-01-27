@@ -29,7 +29,7 @@ router.post("/", async (req: Request, res: Response) => {
     return res.status(200).json({
         code: 200,
         status: "Success",
-        token,
+        token: "Bearer " + token,
     });
 });
 
