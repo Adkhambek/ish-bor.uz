@@ -7,4 +7,5 @@ export default {
     botToken: process.env.TOKEN,
     baseUrl: process.env.BASE_URL,
     telegramChannel: process.env.TELEGRAM_CHANNEL,
+    chatId: process.env.CHAT_ID,
 };
