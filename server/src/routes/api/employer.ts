@@ -90,54 +90,32 @@ router.get("/:id", async (req: Request, res: Response) => {
     });
 });
 
-router.get("/region/:name/page/:num", async (req: Request, res: Response) => {
-    const { name, num } = req.params as any;
+router.get("/region/:name", async (req: Request, res: Response) => {
+    const { name } = req.params as any;
 
     const employerRepository = getRepository(Employer);
-    const total: number = await employerRepository.count({
-        where: { region: name },
+    const data = await employerRepository.find({
+        select: ["id", "profession", "region", "age", "salary", "created_at"],
+        where: {
+            status: 1,
+            region: name,
+        },
+        order: {
+            id: "DESC",
+        },
     });
-    const Totalpage: number = Math.ceil(total / key.pgLimit);
-    if (+num === 0 || +num > Totalpage) {
-        return res.status(404).json({
-            code: 404,
-            status: "Not Found",
-            error: "Bunday sahifa yo'q",
-        });
-    } else {
-        const offset = (num - 1) * key.pgLimit;
-        const data = await employerRepository.find({
-            select: [
-                "id",
-                "profession",
-                "region",
-                "age",
-                "salary",
-                "created_at",
-            ],
-            where: {
-                status: 1,
-                region: name,
-            },
-            order: {
-                id: "DESC",
-            },
-            skip: offset,
-            take: key.pgLimit,
-        });
-        if (!data.length) {
-            return res.status(400).json({
-                code: 400,
-                status: "Empty",
-                error: "Hech qanday ma'lumot yo'q",
-            });
-        }
-        res.status(200).json({
-            code: 200,
-            status: "OK",
-            data,
+    if (!data.length) {
+        return res.status(400).json({
+            code: 400,
+            status: "Empty",
+            error: "Hech qanday ma'lumot yo'q",
         });
     }
+    res.status(200).json({
+        code: 200,
+        status: "OK",
+        data,
+    });
 });
 
 router.get("/new/:id", protect, async (req: Request, res: Response) => {
