@@ -9,8 +9,13 @@ import protect from "../../middleware/auth";
 router.get("/page/:num", async (req: Request, res: Response) => {
     const employeeRepository = getRepository(Employee);
     const page: number = (req.params.num as any) * 1;
-    const total: number = await employeeRepository.count();
+    const total: number = await employeeRepository.count({
+        where: {
+            status: 1,
+        },
+    });
     const Totalpage: number = Math.ceil(total / key.pgLimit);
+
     if (page === 0 || page > Totalpage) {
         return res.status(404).json({
             code: 404,
@@ -50,6 +55,21 @@ router.get("/page/:num", async (req: Request, res: Response) => {
             data,
         });
     }
+});
+
+router.get("/pages", async (req: Request, res: Response) => {
+    const employeeRepository = getRepository(Employee);
+    const total: number = await employeeRepository.count({
+        where: {
+            status: 1,
+        },
+    });
+    const Totalpage: number = Math.ceil(total / key.pgLimit);
+    res.status(200).json({
+        code: 200,
+        status: "success",
+        pages: Totalpage,
+    });
 });
 
 router.get("/:id", async (req: Request, res: Response) => {
@@ -154,7 +174,11 @@ router.get("/new/:id", protect, async (req: Request, res: Response) => {
 router.get("/new/page/:num", protect, async (req: Request, res: Response) => {
     const employeeRepository = getRepository(Employee);
     const page: number = (req.params.num as any) * 1;
-    const total: number = await employeeRepository.count();
+    const total: number = await employeeRepository.count({
+        where: {
+            status: 0,
+        },
+    });
     const Totalpage: number = Math.ceil(total / key.pgLimit);
     if (page === 0 || page > Totalpage) {
         return res.status(404).json({
@@ -195,6 +219,21 @@ router.get("/new/page/:num", protect, async (req: Request, res: Response) => {
             data,
         });
     }
+});
+
+router.get("/new/pages", protect, async (req: Request, res: Response) => {
+    const employeeRepository = getRepository(Employee);
+    const total: number = await employeeRepository.count({
+        where: {
+            status: 0,
+        },
+    });
+    const Totalpage: number = Math.ceil(total / key.pgLimit);
+    res.status(200).json({
+        code: 200,
+        status: "success",
+        pages: Totalpage,
+    });
 });
 
 router.post("/", async (req: Request, res: Response) => {
