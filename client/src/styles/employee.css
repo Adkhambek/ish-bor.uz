@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.employee table{
+    border: 2px solid #EABF9F;
+}
+.employee table thead{
+    background-color: #EABF9F;
+    color: #ffffff;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    border: none!important;
+}
+.employee table tbody tr{
+    border: 2px solid #EABF9F;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #01384D;
+}
+.employee table tbody tr .switch{
+    width: 45px;
+    height: 24px;
+    border-radius: 20px;
+    position: relative;
+}
+.employee table tbody tr .switch .switch-square{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    transition: all 0.2s ease-in-out;
+}
+
+.employee table tbody tr td i{
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.employee table tbody tr td .fa-trash-alt:hover{
+    transform: rotate(360deg);
+}

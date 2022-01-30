@@ -22,6 +22,9 @@
 .workers .row{
     margin-top: 50px;
 }
+.workers .col-3{
+    margin-top: 20px;
+}
 .workers .card{
     height: 100%;
     border: 2px solid #01384D;
@@ -29,6 +32,7 @@
     background-color: #ffffff;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+
 }
 .workers .card:hover{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -54,7 +58,7 @@
     color: #01384D;
 }
 .workers .card .card-body h5{
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Kodchasan', sans-serif;
     font-weight: 600;
     color: #6c757d
@@ -62,6 +66,7 @@
 .workers .card .card-body h5 span{
     font-weight: 900;
     color: #01384D;
+    font-size: 16px;
 }
 .workers .card .card-body .worker-link{
     background-color: #01384D;

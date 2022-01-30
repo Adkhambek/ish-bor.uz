@@ -1,30 +1,28 @@
 import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
-import City from "../components/City";
 import axios from "axios";
 import API from "../API";
 import Token from "../dashboardPages/Token";
 
-const Jobs = () => {
+const CityJobs = ({match}) => {
+    const ID=match.params.id
+    const city =(ID.charAt(0).toUpperCase() + ID.slice(1)).replace('-',' ');
     const [workers,setWorkers]=useState([])
+    const linkById='/ishchilar'
     useEffect(()=>{
-        axios.get(API+"/employer/page/1",{
+        axios.get(API+`/employee/region/${ID}/page/1`,{
             headers: {
                 'Authorization': Token
             }
         })
             .then((res)=>{
-                setWorkers(res.data.data)
-                console.log(res.data.data)
+                console.log(res)
             })
-    },[])
-    const linkById='/ishlar'
+    })
     return (
-        <section className="jobs workers">
-            <City/>
+        <section className="workers">
             <div className="container-fluid">
-                <h2 className="title-workers">Ishlar</h2>
-                <p className="sub-title-workers">Quyida sizga kerakli ishni topishingiz mumkin!</p>
+                <h1>Ishchi izlash {city}</h1>
                 <div className="row">
                     {
                         workers.map((item,index)=>{
@@ -52,4 +50,4 @@ const Jobs = () => {
     );
 };
 
-export default Jobs;
+export default CityJobs;

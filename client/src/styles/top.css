@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 10px!important;
+    margin-right: 10px;
+    padding-right: 30px;
+}
+.top h6{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #EABF9F;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.top .user{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    background-color: #EABF9F;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.top .user i{
+    color: #ffffff;
+}
+.react-responsive-modal-root .logout-text{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 30px;
+    text-align: center;
+}
+.react-responsive-modal-root  .logout-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.react-responsive-modal-root .logout{
+    background-color: white;
+    color: black;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 25px;
+}
+.react-responsive-modal-root .yes{
+    background-color: #EABF9F;
+    color: #ffffff;
+    border: 2px solid #EABF9F;
+}
+.react-responsive-modal-root .no{
+    border: 2px solid #EABF9F;
+    color: #EABF9F;
+}
+.react-responsive-modal-modal{
+    border-radius: 10px;
+}

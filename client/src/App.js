@@ -15,11 +15,20 @@ import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import Ad from "./pages/Ad";
 import Login from "./dashboardPages/Login";
+import "react-toastify/dist/ReactToastify.css";
+import {ToastContainer} from "react-toastify";
+import Employee from "./dashboardPages/Employee";
+import Employer from "./dashboardPages/Employer";
+import EmployerOld from "./dashboardPages/EmployerOld";
+import EmployeeOld from "./dashboardPages/EmployeeOld";
+import CityJobs from "./pages/CityJobs";
+
+
 
 const App = () => {
+    const link='asas'
     return (
         <>
-
                 <Header/>
                     <main>
                         <Switch>
@@ -30,6 +39,7 @@ const App = () => {
                             <Route path="/ish" exact component={SearchJobs}/>
                             <Route path="/ishlar" exact component={Jobs}/>
                             <Route path="/ishlar/:id" exact component={JobById}/>
+                            <Route path="/ishchilar/region/:id" exact component={CityJobs}/>
 
                             <Route path="/about" exact component={About}/>
                             <Route path="/service" exact component={Service}/>
@@ -38,9 +48,15 @@ const App = () => {
                             <Route path="/ad" exact component={Ad}/>
 
                             <Route path="/login" exact component={Login}/>
+                            <Route path="/dashboard/employee" exact component={Employee}/>
+                            <Route path="/dashboard/employer" exact component={Employer}/>
+                            <Route path="/dashboard/employeeOld" exact component={EmployeeOld}/>
+                            <Route path="/dashboard/employerOld" exact component={EmployerOld}/>
                         </Switch>
                     </main>
                 <Footer/>
+            <ToastContainer />
+
 
         </>
     );

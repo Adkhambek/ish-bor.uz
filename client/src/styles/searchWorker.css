@@ -41,3 +41,21 @@
     border: 2px solid #01384D;
     border-radius: 10px;
 }
+.search__worker button{
+    background-color: #01384D;
+    color: white;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    border: 2px solid #01384D;
+    border-radius: 13px;
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+}
+.search__worker button:hover{
+    background-color: white;
+    color: #01384D;
+}
