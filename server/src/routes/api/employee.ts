@@ -130,6 +130,21 @@ router.get("/region/:name", async (req: Request, res: Response) => {
     });
 });
 
+router.get("/new/pages", protect, async (req: Request, res: Response) => {
+    const employeeRepository = getRepository(Employee);
+    const total: number = await employeeRepository.count({
+        where: {
+            status: 0,
+        },
+    });
+    const Totalpage: number = Math.ceil(total / key.pgLimit);
+    res.status(200).json({
+        code: 200,
+        status: "success",
+        pages: Totalpage,
+    });
+});
+
 router.get("/new/:id", protect, async (req: Request, res: Response) => {
     const employeeRepository = getRepository(Employee);
     const id: number = (req.params.id as any) * 1;
@@ -204,21 +219,6 @@ router.get("/new/page/:num", protect, async (req: Request, res: Response) => {
             data,
         });
     }
-});
-
-router.get("/new/pages", protect, async (req: Request, res: Response) => {
-    const employeeRepository = getRepository(Employee);
-    const total: number = await employeeRepository.count({
-        where: {
-            status: 0,
-        },
-    });
-    const Totalpage: number = Math.ceil(total / key.pgLimit);
-    res.status(200).json({
-        code: 200,
-        status: "success",
-        pages: Totalpage,
-    });
 });
 
 router.post("/", async (req: Request, res: Response) => {
