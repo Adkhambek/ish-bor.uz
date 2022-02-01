@@ -4,14 +4,7 @@ import {NavLink} from "react-router-dom";
 
 const City = () => {
     const linkById='/ishchilar/region'
-    // const [statistics,setStatistics]=useState([])
-    // useEffect(()=>{
-    //     axios.get(API+"/api/statistics")
-    //         .then((res)=>{
-    //             setStatistics(res.data.data)
-    //         })
-    //
-    // }, [])
+    const linkByIdOne='/ishlar/region'
     return (
         <section className="city">
             <div className="container-fluid">
@@ -58,28 +51,28 @@ const City = () => {
                                 <div className="row">
                                     <div className="col-4">
                                         <ul>
-                                            <li><a href="">Toshkent shahar</a> </li>
-                                            <li><a href="">Toshkent viloyati</a></li>
-                                            <li><a href="">Andijon viloyati</a></li>
-                                            <li><a href="">Buxoro viloyati</a></li>
-                                            <li><a href="">Fargʻona viloyati</a></li>
+                                            <li><NavLink to={`${linkByIdOne}/toshkent-shahri`}>Toshkent shahar</NavLink> </li>
+                                            <li><NavLink to={`${linkByIdOne}/toshkent-viloyati`}>Toshkent viloyati</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/andijon-viloyati`}>Andijon viloyati</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/buxoro-viloyati`}>Buxoro viloyati</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/fargona-viloyati`}>Fargʻona viloyati</NavLink></li>
                                         </ul>
                                     </div>
                                     <div className="col-4">
                                         <ul>
-                                            <li><a href="">Jizzax viloyati</a></li>
-                                            <li><a href="">Xorazm viloyati</a></li>
-                                            <li><a href="">Namangan viloyati</a></li>
-                                            <li><a href="">Navoiy viloyati</a></li>
-                                            <li><a href="">Qashqadaryo viloyati</a></li>
+                                            <li><NavLink to={`${linkByIdOne}/jizzax-viloyati`}>Jizzax viloyati</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/xorazm-viloyati`}>Xorazm viloyati</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/namangan-viloyati`}>Namangan viloyati</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/navoiy-viloyati`}>Navoiy viloyati</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/qashqadaryo-viloyati`}>Qashqadaryo viloyati</NavLink></li>
                                         </ul>
                                     </div>
                                     <div className="col-4">
                                         <ul>
-                                            <li><a href="">Qoraqalpogʻiston</a></li>
-                                            <li><a href="">Samarqand viloyati</a></li>
-                                            <li><a href="">Sirdaryo viloyati</a></li>
-                                            <li><a href="">Surxondaryo viloyati</a></li>
+                                            <li><NavLink to={`${linkByIdOne}/qoraqalpogiston`}>Qoraqalpogʻiston</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/samarqand-viloyati`}>Samarqand viloyati</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/sirdaryo-viloyati`}>Sirdaryo viloyati</NavLink></li>
+                                            <li><NavLink to={`${linkByIdOne}/surxondaryo-viloyati`}>Surxondaryo viloyati</NavLink></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -6,6 +6,7 @@ import API from "../API";
 import Token from "./Token";
 import ClipLoader from "react-spinners/ClipLoader";
 import {toast} from "react-toastify";
+import {NavLink} from "react-router-dom";
 
 
 const Employer = () => {
@@ -20,11 +21,22 @@ const Employer = () => {
             }
         })
             .then((res)=>{
-                console.log(res.data.data)
                 setEmployer(res.data.data)
                 setActive(false)
             })
     },[])
+    const reqPage = (id) => {
+        setActive(true)
+        axios.get(API+`/employer/new/page/${id}`,{
+            headers: {
+                'Authorization': Token
+            }
+        })
+            .then((res)=>{
+                setEmployer(res.data.data)
+                setActive(false)
+            })
+    }
     const editStatus = (id) => {
         setLeft(id)
         axios.patch(API+`/employer/status/${id}`,{
@@ -51,6 +63,23 @@ const Employer = () => {
                 const deleteData=employer.filter((e)=>e.id !=id)
                 setEmployer(deleteData)
             })
+    }
+    const [link,setLink]=useState('/dashboard/employer')
+    const [pages,setPages]=useState(0)
+    const arr=[]
+    // useEffect(()=>{
+    //     axios.get(API+'/employer/new/pages',{
+    //         headers: {
+    //             'Authorization': Token
+    //         }
+    //     })
+    //         .then((res)=>{
+    //             // setPages(res.data.pages)
+    //             console.log(res)
+    //         })
+    // },[])
+    for(let i=1;i<=pages;i++){
+        arr.push(i)
     }
     if (localStorage.getItem('ishToken')){
         return (
@@ -113,6 +142,18 @@ const Employer = () => {
                                         })}
                                         </tbody>
                                     </table>
+                                    <div className="links">
+                                        {arr.map((item,index)=>{
+                                            return(
+                                                <NavLink
+                                                    onClick={()=>{reqPage(item)}}
+                                                    activeClassName="active"
+                                                    to={`${link}/${item}`}
+                                                    key={index.toString()}>{item}
+                                                </NavLink>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
                             }
                         </div>

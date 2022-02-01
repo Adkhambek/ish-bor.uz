@@ -63,3 +63,32 @@ footer .footer__end{
     font-weight: 700;
     margin-bottom: 30px;
 }
+@media (max-width: 768px) {
+    footer{
+        margin-top: 50px;
+    }
+    footer .col-4{
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    footer .col-3{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 30px;
+        text-align: center;
+    }
+    footer .col-2{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 30px;
+        text-align: center;
+    }
+    footer .footer__end{
+        text-align: center;
+    }
+    footer .last__col a{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

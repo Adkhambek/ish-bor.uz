@@ -52,3 +52,46 @@
     color: #fff;
     transform: translateY(-5px);
 }
+@media (max-width: 1200px) {
+    .banner .card-body h3{
+        font-size: 30px;
+    }
+    .banner .card-body .links{
+        display: block;
+    }
+    .banner .card-body .links a{
+        margin-top: 5px;
+    }
+}
+@media (max-width: 991px) {
+    .banner .col-6{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 900px) {
+    .banner{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .banner .card-body h3 {
+        font-size: 20px;
+    }
+    .banner .card-body h6{
+        font-size: 16px;
+    }
+    .banner .card-body{
+        display: block;
+        text-align: center;
+    }
+    .banner .card-body img{
+        height: 200px;
+        margin-top: 20px;
+    }
+    .banner .card-body .links{
+        margin-top: 20px;
+    }
+}
+

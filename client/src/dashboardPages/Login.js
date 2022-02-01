@@ -25,7 +25,7 @@ const Login = () => {
                 localStorage.setItem('ishToken', res.data.token)
                 setActive(false)
                 toast.success(res.data.status)
-                history.push("/dashboard/employee");
+                history.push("/dashboard/employee/1");
             })
             .catch((err)=>{
                 toast.error(err.response.data.error)

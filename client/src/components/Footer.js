@@ -3,16 +3,12 @@ import '../styles/footer.css'
 import {NavLink} from "react-router-dom";
 
 const Footer = () => {
-    if (window.location.pathname==='/dashboard/employer' || window.location.pathname==='/dashboard/employee' || window.location.pathname==='/dashboard/employeeOld' | window.location.pathname==='/dashboard/employerOld'){
-        return null
-    }
-    else {
         return (
             <footer>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-4">
-                            <a className="main__link" href="">ISH.UZ</a>
+                            <NavLink to="/" className="main__link" href="">ISH.UZ</NavLink>
                             <h6>Ishchi qidirish biz bilan juda ham oson va Ish qidirish <br/> biz bilan samarali!</h6>
                         </div>
                         <div className="col-3">
@@ -46,7 +42,6 @@ const Footer = () => {
                 </div>
             </footer>
         );
-    }
 };
 
 export default Footer;

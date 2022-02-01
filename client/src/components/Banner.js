@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/banner.css'
+import {NavLink} from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -13,8 +14,8 @@ const Banner = () => {
                                     <h3>Ishchi qidiryapman</h3>
                                     <h6>Ishchi qidirish biz bilan juda ham oson!</h6>
                                     <div className="links">
-                                        <a href="">Ishchi qidirish</a>
-                                        <a href="">Ishchilar</a>
+                                        <NavLink to="/ishchi">Ishchi qidirish</NavLink>
+                                        <NavLink to="/ishchilar/page/1">Ishchilar</NavLink>
                                     </div>
                                 </div>
                                 <div>
@@ -30,8 +31,8 @@ const Banner = () => {
                                     <h3>Ish qidiryapman</h3>
                                     <h6>Ish qidirish biz bilan samarali!</h6>
                                     <div className="links">
-                                        <a href="">Ish qidirish</a>
-                                        <a href="">Ishlar</a>
+                                        <NavLink to="/ish">Ish qidirish</NavLink>
+                                        <NavLink to="/ishlar/page/1">Ishlar</NavLink>
                                     </div>
                                 </div>
                                 <div>

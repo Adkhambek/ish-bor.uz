@@ -1,21 +1,22 @@
 import React, {useEffect, useState} from 'react';
+import {NavLink} from "react-router-dom";
 import axios from "axios";
 import API from "../API";
 import Token from "../dashboardPages/Token";
-import {NavLink} from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
+import City from "../components/City";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const CityJobs = ({match}) => {
+const CityWorkers = ({match}) => {
     const ID=match.params.id
     const city =(ID.charAt(0).toUpperCase() + ID.slice(1)).replace('-',' ');
     const [workers,setWorkers]=useState([])
     const [active,setActive]=useState(false)
-    const linkById='/ishlar'
+    const linkById='/ishchilar'
     useEffect(()=>{
         setActive(true)
-        axios.get(API+`/employer/region/${ID}`,{
+        axios.get(API+`/employee/region/${ID}`,{
             headers: {
                 'Authorization': Token
             }
@@ -30,13 +31,13 @@ const CityJobs = ({match}) => {
             <Header/>
             <section className="workers">
                 <div className="container-fluid">
-                    <h1 className="city-title"><span>Ish izlash</span> {city}</h1>
+                    <h1 className="city-title"><span>Ishchi izlash</span> {city}</h1>
                     {
                         workers.length===0
                             ?
                             <div className="city-none">
-                                <h1 className="city-title mt-5 text-danger">Afsuski bu viloyatda ish yo'q!!!</h1>
-                                <NavLink className="worker-link-city" to="/ishlar/page/1"><i className="fas fa-arrow-left"/>Ishlar</NavLink>
+                                <h1 className="city-title mt-5 text-danger">Afsuski bu viloyatda ishchi yo'q!!!</h1>
+                                <NavLink className="worker-link-city" to="/ishchilar/page/1"><i className="fas fa-arrow-left"/>Ishchilar</NavLink>
                             </div>
                             :
                             <div>
@@ -75,7 +76,7 @@ const CityJobs = ({match}) => {
                                     </div>
 
                                 }
-                                <NavLink className="worker-link-city" to="/ishlar/page/1"><i className="fas fa-arrow-left"/>Ishlar</NavLink>
+                                <NavLink className="worker-link-city" to="/ishchilar/page/1"><i className="fas fa-arrow-left"/>Ishchilar</NavLink>
                             </div>
                     }
 
@@ -87,4 +88,4 @@ const CityJobs = ({match}) => {
     );
 };
 
-export default CityJobs;
+export default CityWorkers;

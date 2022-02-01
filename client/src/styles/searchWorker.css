@@ -59,3 +59,24 @@
     background-color: white;
     color: #01384D;
 }
+@media (max-width: 900px) {
+    .search__worker{
+        margin-top: 40px;
+    }
+}
+@media (max-width: 768px) {
+
+    .search__worker .col-4{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (max-width: 768px) {
+    .search__worker h2{
+        font-size:30px;
+    }
+    .search__worker .col-4{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

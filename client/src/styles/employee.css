@@ -39,3 +39,27 @@
 .employee table tbody tr td .fa-trash-alt:hover{
     transform: rotate(360deg);
 }
+.employee .p-4 .links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.employee .p-4 .links a{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #01384D;
+    border: 2px solid #01384D;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 2px;
+}
+.employee .p-4 .links .active{
+    background-color: #01384D;
+    color: white;
+}

@@ -28,3 +28,22 @@
     font-weight: 700;
     text-decoration: none;
 }
+@media (max-width: 1200px) {
+    .city .card .col-4{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (max-width: 768px) {
+    .city .card .col-4{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .city  .col-6{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+}
+
+
