@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.left-dashboard{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 100%;
+    min-height: 100vh;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    min-width:250px;
+}
+.left-dashboard a{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    display: block;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 25px;
+    border-left: 5px solid #ffffff;
+}
+.left-dashboard a i{
+    display: block;
+}
+.left-dashboard .active-left{
+    color: #EABF9F;
+    border-left: 5px solid #EABF9F;
+}

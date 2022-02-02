@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.about{
+    margin-top: 150px;
+}
+.about h1{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #01384D;
+}
+.about p{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #01384D;
+}
+.about .color{
+    background-color: #d1ecf1;
+    padding: 10px 15px;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 2px solid #01384D;
+    cursor: pointer;
+}
+.about .email{
+    margin-top: 10px;
+}
+.about .row{
+    padding-top: 30px;
+}
+.about .col-6 input{
+    border: 2px solid #01384D;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    display: block;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+.about .col-6 .submit-button{
+    width: 100%;
+    padding: 10px;
+    background-color: #01384D;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #01384D;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.5s ease-in-out;
+    margin-top: 10px;
+}
+.about .col-6 .submit-button:hover{
+    background-color: #ffffff;
+    color: #01384D;
+}
+@media (max-width: 900px) {
+    .about {
+        margin-top: 30px;
+    }
+    .about h1{
+        text-align: center;
+    }
+    .about  p{
+        /*text-align: justify;*/
+        margin-top: 20px;
+    }
+    .about .col-6{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+    .about .col-6:first-child{
+        margin-top: 0!important;
+    }
+}

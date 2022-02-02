@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.workers{
+    margin-top: 150px;
+}
+.workers .city-title{
+    font-family: 'Kodchasan', sans-serif;
+    text-align: center;
+    font-weight: 700;
+}
+.workers .city-title span{
+    color: #6c757d;
+}
+.workers .worker-link-city{
+    background-color: #01384D;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #01384D;
+    width: 30%;
+    margin: 50px auto;
+}
+.workers .worker-link-city i{
+    margin-right: 10px;
+}
+.workers .worker-link-city:hover{
+    background-color: #ffffff;
+    color: #01384D;
+    border: 2px solid #01384D;
+    transform: translateY(-5px);
+}
+.workers .container-fluid{
+    margin-top: 100px;
+}
+.workers .title-workers{
+    text-align: center;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #01384D;
+}
+.workers .sub-title-workers{
+    text-align: center;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #6c757d
+}
+.workers .row{
+    margin-top: 50px;
+}
+.workers .col-3{
+    margin-top: 20px;
+}
+.workers .card{
+    height: 100%;
+    border: 2px solid #01384D;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+}
+.workers .card:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.workers .card .card-header{
+    border-bottom: 2px solid #01384D;
+}
+.workers .card .card-header h6{
+    font-size: 18px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+    color: #01384D;
+    min-height: 45px;
+}
+.workers .card .card-header h6 span{
+    font-weight: 700;
+    color: #6c757d;
+}
+.workers .card .card-body p{
+    font-size: 14px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+    color: #01384D;
+}
+.workers .card .card-body h5{
+    font-size: 14px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+    color: #6c757d
+}
+.workers .card .card-body h5 span{
+    font-weight: 900;
+    color: #01384D;
+    font-size: 16px;
+}
+.workers .card .card-body .worker-link{
+    background-color: #01384D;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #01384D;
+}
+.workers .card .card-body .worker-link:hover{
+    background-color: #ffffff;
+    color: #01384D;
+    border: 2px solid #01384D;
+}
+.workers .card .card-body .worker-link i{
+    color: #01384D;
+    margin-left: 10px;
+}
+.workers  .links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+.workers  .links a{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #01384D;
+    border: 2px solid #01384D;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 2px;
+}
+.workers .links .active{
+    background-color: #01384D;
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .workers{
+        margin-top: 0;
+    }
+    .workers .col-3{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (max-width: 500px) {
+    .workers .col-3{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .workers .city-none a{
+        width: 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px!important;
+}
+::-webkit-scrollbar {max-height: 50%; height: 50%;}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #01384D;
+}

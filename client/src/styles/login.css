@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.login{
+    margin: 150px 0;
+}
+.login h2{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px!important;
+}
+.login .card{
+    border-radius: 10px;
+    border: 2px solid #01384D;
+}
+.login .card input{
+    display: block;
+    width: 100%;
+    border: 2px solid #000000;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+}
+.login .card input:focus{
+    outline: none;
+}
+.login .card input::placeholder{
+    font-size: 14px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 600;
+}
+.login .card button{
+    width: 100%;
+    margin-top: 40px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #01384D;
+    padding: 10px;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid #E58211;
+}
+.login .card .password{
+    position: relative;
+}
+.login .card i{
+    position: absolute;
+    right: 10%;
+    bottom: 47%;
+    cursor: pointer;
+}

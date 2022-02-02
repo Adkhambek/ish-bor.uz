@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+.search__worker{
+    margin-top: 200px;
+}
+.search__worker h2{
+    font-family: 'Kodchasan', sans-serif;
+    text-align: center;
+    color: #01384D;
+    font-weight: 700;
+    font-size: 40px;
+}
+.search__worker .col-4{
+    margin-top: 50px;
+}
+.search__worker .col-4 p{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    color: #01384D;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.search__worker .col-4 input{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 18px;
+    color: #01384D;
+    border: 2px solid #01384D;
+    border-radius: 10px;
+}
+.search__worker .col-4 select{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 18px;
+    color: #01384D;
+    border: 2px solid #01384D;
+    border-radius: 10px;
+}
+.search__worker button{
+    background-color: #01384D;
+    color: white;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    border: 2px solid #01384D;
+    border-radius: 13px;
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+}
+.search__worker button:hover{
+    background-color: white;
+    color: #01384D;
+}
+@media (max-width: 900px) {
+    .search__worker{
+        margin-top: 40px;
+    }
+}
+@media (max-width: 768px) {
+
+    .search__worker .col-4{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (max-width: 768px) {
+    .search__worker h2{
+        font-size:30px;
+    }
+    .search__worker .col-4{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

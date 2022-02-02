@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&display=swap');
+footer{
+    margin-top: 150px;
+    background-color: #01384D;
+    color: #ffffff;
+    padding-top: 30px;
+}
+footer h6{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+footer a{
+    color: white;
+    display: block;
+    text-decoration: none;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+}
+footer a:hover{
+    color: #ffffff;
+}
+footer .main__link{
+    font-size: 40px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+footer h5{
+    font-size: 24px;
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+footer .last__col a{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .last__col a:hover{
+    background-color: #ffffff;
+}
+footer .last__col a:hover i{
+    color: #01384D;
+    border: 2px solid #ffffff;
+}
+footer .col-12{
+    background-color: #ffffff;
+    height: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+footer .footer__end{
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+    footer{
+        margin-top: 50px;
+    }
+    footer .col-4{
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    footer .col-3{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 30px;
+        text-align: center;
+    }
+    footer .col-2{
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-top: 30px;
+        text-align: center;
+    }
+    footer .footer__end{
+        text-align: center;
+    }
+    footer .last__col a{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
