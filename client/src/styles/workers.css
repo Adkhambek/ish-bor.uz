@@ -166,6 +166,9 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
+    .workers .city-none a{
+        width: 50%;
+    }
 }
 
 

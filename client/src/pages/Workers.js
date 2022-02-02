@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ClipLoader from "react-spinners/ClipLoader";
 const Workers = () => {
+    const [perPage,setPerPage]=useState(1)
     const [link,setLink]=useState('/ishchilar/page')
     const [workers,setWorkers]=useState([])
     const [active,setActive]=useState(false)
@@ -51,7 +52,6 @@ const Workers = () => {
     for(let i=1;i<=pages;i++){
         arr.push(i)
     }
-
 
     const linkById='/ishchilar'
     return (
@@ -97,16 +97,36 @@ const Workers = () => {
                     }
 
                     <div className="links">
+                        <NavLink
+                            style={perPage===1?{display:"none"}:{display:""}}
+                            onClick={()=>{
+                                reqPage(perPage-1)
+                                setPerPage(perPage-1)
+                            }}
+                            to={`${link}/${perPage-1}`}>
+                            <i className="fas fa-chevron-left"/>
+                        </NavLink>
                         {arr.map((item,index)=>{
                             return(
                                 <NavLink
-                                    onClick={()=>{reqPage(item)}}
+
+                                    onClick={()=>{
+                                        reqPage(item)
+                                        setPerPage(item)
+                                    }}
                                     activeClassName="active"
                                     to={`${link}/${item}`}
                                     key={index.toString()}>{item}
                                 </NavLink>
                             )
                         })}
+                        <NavLink
+                            style={perPage==arr.slice(-1)?{display:"none"}:{display:""}}
+                            onClick={()=>{
+                                reqPage(perPage+1)
+                                setPerPage(perPage+1)
+                            }}
+                            to={`${link}/${perPage+1}`}><i className="fas fa-chevron-right"/></NavLink>
                     </div>
                 </div>
             </section>

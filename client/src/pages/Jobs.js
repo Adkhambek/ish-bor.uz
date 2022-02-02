@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const Jobs = () => {
+    const [perPage,setPerPage]=useState(1)
     const [workers,setWorkers]=useState([])
     const [link,setLink]=useState('/ishlar/page')
     const [active,setActive]=useState(false)
@@ -95,16 +96,35 @@ const Jobs = () => {
                     }
 
                     <div className="links">
+                        <NavLink
+                            style={perPage===1?{display:"none"}:{display:""}}
+                            onClick={()=>{
+                                reqPage(perPage-1)
+                                setPerPage(perPage-1)
+                            }}
+                            to={`${link}/${perPage-1}`}>
+                            <i className="fas fa-chevron-left"/>
+                        </NavLink>
                         {arr.map((item,index)=>{
                             return(
                                 <NavLink
-                                    onClick={()=>{reqPage(item)}}
+                                    onClick={()=>{
+                                        reqPage(item)
+                                        setPerPage(item)
+                                    }}
                                     activeClassName="active"
                                     to={`${link}/${item}`}
                                     key={index.toString()}>{item}
                                 </NavLink>
                             )
                         })}
+                        <NavLink
+                            style={perPage==arr.slice(-1)?{display:"none"}:{display:""}}
+                            onClick={()=>{
+                                reqPage(perPage+1)
+                                setPerPage(perPage+1)
+                            }}
+                            to={`${link}/${perPage+1}`}><i className="fas fa-chevron-right"/></NavLink>
                     </div>
                 </div>
             </section>

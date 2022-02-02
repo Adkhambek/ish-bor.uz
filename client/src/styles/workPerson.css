@@ -126,4 +126,10 @@
     .work__person .card-header h5 .sub__span{
         display: inline;
     }
+    .work__person .card-body .left a{
+        font-size: 16px;
+    }
+    .work__person .card-body .right a{
+        font-size: 16px;
+    }
 }

@@ -49,8 +49,8 @@
     font-size: 20px;
     font-weight: 600;
     background-color: #ffffff;
-    color: #01384D;
-    border: 2px solid #01384D;
+    color: #EABF9F;
+    border: 2px solid #EABF9F;
     width: 40px;
     height: 40px;
     display: flex;
@@ -60,6 +60,6 @@
     margin: 2px;
 }
 .employee .p-4 .links .active{
-    background-color: #01384D;
+    background-color: #EABF9F;
     color: white;
 }

@@ -19,6 +19,9 @@ header{
 .header__main__div .color{
     color: #ffffff;
 }
+.header__main__div .color:hover{
+    color: #ffffff;
+}
 .header__main__div{
     display: flex;
     align-items: center;
@@ -48,6 +51,9 @@ header{
     margin-top: -20px;
     transition: all 0.4s ease-in-out;
 }
+/*.top__header__main__div a:hover{*/
+/*    color: #ffffff;*/
+/*}*/
 .header__left{
     text-decoration: none;
     color: #01384D;

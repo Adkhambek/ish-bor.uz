@@ -8,10 +8,11 @@ import Token from "./Token";
 import {toast} from "react-toastify";
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-import {NavLink} from "react-router-dom";
+import {NavLink, useHistory} from "react-router-dom";
 
 const EmployerOld = () => {
-    const [perPage,setPerPage]=useState(0)
+    const history = useHistory();
+    const [perPage,setPerPage]=useState(1)
     const professionRef=useRef(null)
     const infoRef=useRef(null)
     const experienceRef=useRef(null)
@@ -40,6 +41,10 @@ const EmployerOld = () => {
                 setWorkers(res.data.data)
                 setActive(false)
             })
+            .catch((err)=>{
+                toast.error(err.response.data.error)
+                history.push("/login");
+            })
     },[])
     const reqPage = (id) => {
         setActive(true)
@@ -51,6 +56,10 @@ const EmployerOld = () => {
             .then((res)=>{
                 setWorkers(res.data.data)
                 setActive(false)
+            })
+            .catch((err)=>{
+                toast.error(err.response.data.error)
+                history.push("/login");
             })
     }
     const editStatus = (id) => {
@@ -124,6 +133,7 @@ const EmployerOld = () => {
                     })
             })
     }
+
     const [link,setLink]=useState('/dashboard/employerOld')
     const [pages,setPages]=useState(0)
     const arr=[]
@@ -201,21 +211,39 @@ const EmployerOld = () => {
                                         })}
                                         </tbody>
                                     </table>
-                                    <div className="links">
-                                        {arr.map((item,index)=>{
-                                            return(
-                                                <NavLink
-                                                    onClick={()=>{
-                                                        reqPage(item)
-                                                        setPerPage(item)
-                                                    }}
-                                                    activeClassName="active"
-                                                    to={`${link}/${item}`}
-                                                    key={index.toString()}>{item}
-                                                </NavLink>
-                                            )
-                                        })}
-                                    </div>
+                                    {arr.length>1?
+                                        <div className="links">
+                                            <NavLink
+                                                style={perPage===1?{display:"none"}:{display:""}}
+                                                onClick={()=>{
+                                                    reqPage(perPage-1)
+                                                    setPerPage(perPage-1)
+                                                }}
+                                                to={`${link}/${perPage-1}`}>
+                                                <i className="fas fa-chevron-left"/>
+                                            </NavLink>
+                                            {arr.map((item,index)=>{
+                                                return(
+                                                    <NavLink
+                                                        onClick={()=>{
+                                                            reqPage(item)
+                                                            setPerPage(item)
+                                                        }}
+                                                        activeClassName="active"
+                                                        to={`${link}/${item}`}
+                                                        key={index.toString()}>{item}
+                                                    </NavLink>
+                                                )
+                                            })}
+                                            <NavLink
+                                                style={perPage==arr.slice(-1)?{display:"none"}:{display:""}}
+                                                onClick={()=>{
+                                                    reqPage(perPage+1)
+                                                    setPerPage(perPage+1)
+                                                }}
+                                                to={`${link}/${perPage+1}`}><i className="fas fa-chevron-right"/></NavLink>
+                                        </div>:""
+                                    }
                                 </div>
                             }
                         </div>

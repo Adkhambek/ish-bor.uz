@@ -34,6 +34,9 @@
     align-items: center;
     margin-top: 50px;
 }
+.banner .card-body .banner-first-image{
+    display: none;
+}
 .banner .card-body .links a{
     display: block;
     text-decoration: none;
@@ -86,12 +89,24 @@
         display: block;
         text-align: center;
     }
+    .banner .card-body .banner-second-image{
+        display: none;
+    }
+    .banner .card-body .banner-first-image{
+        display: block;
+    }
+    .banner .card-body .banner-first-image img{
+        margin-top: 0;
+    }
     .banner .card-body img{
         height: 200px;
         margin-top: 20px;
     }
     .banner .card-body .links{
         margin-top: 20px;
+    }
+    .banner .card-body .links a{
+        margin-right: 0;
     }
 }
 
