@@ -1,2 +1,2 @@
-const API = "api";
+const API = "";
 export default API;
